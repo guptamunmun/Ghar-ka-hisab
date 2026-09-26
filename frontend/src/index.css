@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-household-bg text-household-text font-sans;
+}
+
+.card {
+  @apply bg-household-card rounded-xl2 shadow-sm p-5;
+}
+
+.btn-primary {
+  @apply bg-household-primary text-white font-bold py-3 px-5 rounded-xl2 hover:bg-household-primaryDark transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-white text-household-primary font-bold py-3 px-5 rounded-xl2 border-2 border-household-primary hover:bg-household-bg transition-colors;
+}
+
+.input-field {
+  @apply w-full border-2 border-gray-200 rounded-xl2 px-4 py-3 outline-none focus:border-household-primary transition-colors;
+}
