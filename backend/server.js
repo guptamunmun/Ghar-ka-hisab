@@ -9,9 +9,10 @@ const expenseRoutes = require('./routes/expenses');
 const dashboardRoutes = require('./routes/dashboard');
 const budgetRoutes = require('./routes/budget');
 const recurringRoutes = require('./routes/recurring');
-const billRoutes = require('./routes/bills');
 const reportRoutes = require('./routes/reports');
-
+const lifestyleRoutes = require('./routes/lifestyle');
+const targetRoutes = require('./routes/targets');
+const insightRoutes = require('./routes/insights');
 connectDB();
 
 const app = express();
@@ -26,8 +27,10 @@ app.use('/api/expenses', expenseRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/budget', budgetRoutes);
 app.use('/api/recurring', recurringRoutes);
-app.use('/api/bills', billRoutes);
 app.use('/api/reports', reportRoutes);
+app.use('/api/lifestyle', lifestyleRoutes);
+app.use('/api/targets', targetRoutes);
+app.use('/api/insights', insightRoutes);
 
 app.use(errorHandler);
 
