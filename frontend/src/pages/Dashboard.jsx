@@ -25,7 +25,7 @@ export default function Dashboard() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
       {/* Hero card */}
-      <div className="card bg-household-primary text-white">
+      <div className="card bg-household-primary text-black/90 text-center">
         <p className="text-sm font-semibold opacity-90">Spent this month</p>
         <p className="text-4xl font-extrabold mt-1">₹{monthTotal.toLocaleString('en-IN')}</p>
 

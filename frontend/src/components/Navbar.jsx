@@ -3,11 +3,11 @@ import { useAuth } from '../context/AuthContext';
 
 const links = [
   { to: '/', label: 'Home', icon: '🏠' },
+    { to: '/budget', label: 'Budget', icon: '🎯' },
   { to: '/expenses', label: 'Expenses', icon: '🧾' },
-  { to: '/budget', label: 'Budget', icon: '🎯' },
   { to: '/recurring', label: 'Recurring', icon: '🔁' },
-  // { to: '/bills', label: 'Bills', icon: '📄' },
   { to: '/reports', label: 'Reports', icon: '📊' },
+    { to: '/insights', label: 'Insights', icon: '💡' },
 ];
 
 export default function Navbar() {

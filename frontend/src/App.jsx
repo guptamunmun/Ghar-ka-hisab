@@ -9,7 +9,8 @@ import Dashboard from './pages/Dashboard';
 import Expenses from './pages/Expenses';
 import Budget from './pages/Budget';
 import Recurring from './pages/Recurring';
-// import Bills from './pages/Bills';
+import Insights from './pages/Insights';
+import Lifestyle from './pages/Lifestyle';
 import Reports from './pages/Reports';
 
 function Layout({ children }) {
@@ -39,14 +40,6 @@ export default function App() {
               }
             />
             <Route
-              path="/expenses"
-              element={
-                <ProtectedRoute>
-                  <Expenses />
-                </ProtectedRoute>
-              }
-            />
-            <Route
               path="/budget"
               element={
                 <ProtectedRoute>
@@ -55,6 +48,15 @@ export default function App() {
               }
             />
             <Route
+              path="/expenses"
+              element={
+                <ProtectedRoute>
+                  <Expenses />
+                </ProtectedRoute>
+              }
+            />
+            
+            <Route
               path="/recurring"
               element={
                 <ProtectedRoute>
@@ -62,14 +64,22 @@ export default function App() {
                 </ProtectedRoute>
               }
             />
-            {/* <Route
-              path="/bills"
+            <Route
+              path="/insights"
               element={
                 <ProtectedRoute>
-                  <Bills />
+                  <Insights />
                 </ProtectedRoute>
               }
-            /> */}
+            />
+            <Route
+              path="/lifestyle"
+              element={
+                <ProtectedRoute>
+                  <Lifestyle />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/reports"
               element={
