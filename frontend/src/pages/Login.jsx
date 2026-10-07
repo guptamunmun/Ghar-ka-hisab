@@ -18,7 +18,17 @@ export default function Login() {
       await login(email, password);
       navigate('/');
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Please try again.');
+      // setError(err.response?.data?.message || 'Login failed. Please try again.');
+       if (err.response) {
+        // Server actually responded (e.g. wrong password) — show its message.
+        setError(err.response.data?.message || 'Login failed. Please try again.');
+      } else {
+        // No response at all means the request never completed — most commonly a
+        // CORS rejection or no network/wrong API URL, NOT bad credentials. Surfacing
+        // this distinction matters: "wrong password" and "can't reach the server"
+        // need completely different fixes.
+        setError('Could not reach the server. Check your internet connection and that the app is pointed at the right API URL.');
+      }
     } finally {
       setLoading(false);
     }

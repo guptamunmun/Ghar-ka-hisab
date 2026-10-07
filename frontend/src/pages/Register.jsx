@@ -19,7 +19,13 @@ export default function Register() {
       await register(name, email, password);
       navigate('/');
     } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed. Please try again.');
+      // setError(err.response?.data?.message || 'Registration failed. Please try again.');
+      if (err.response) {
+        // Server actually responded (e.g. email already in use) — show its message.
+        setError(err.response.data?.message || 'Registration failed. Please try again.');
+      } else {
+        setError('Could not reach the server. Check your internet connection and that the app is pointed at the right API URL.');
+      }
     } finally {
       setLoading(false);
     }
